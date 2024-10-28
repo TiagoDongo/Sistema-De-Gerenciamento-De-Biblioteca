@@ -18,8 +18,9 @@ typedef struct usuario{
 
 
 void calcular_multa(user *head, char *nome_usuario, int book_id);
-void emprestimo_de_livro(user *head, book *book_list, int book_id, char *nome_usuario);
-void devolucao_de_livro(user *head, book *book_list, int book_id, char *nome_usuario);
+//estas funções precisam de ser revistas pq ainda estão na fase de prototipo
+//void emprestimo_de_livro(user *head, book *book_list, int book_id, char *nome_usuario);
+//void devolucao_de_livro(user *head, book *book_list, int book_id, char *nome_usuario);
 void cadastro_usuario(user *head);
 void listar_usuarios(user head);
 
