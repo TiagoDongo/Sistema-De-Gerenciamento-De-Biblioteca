@@ -16,7 +16,7 @@ int main() {
         printf("7. Carregar Lista de Livros\n");
         printf("0. Sair\n");
         printf("---------------------------------------\n");
-        printf("Escolha uma opção: ");
+        printf("Escolha uma opcao: ");
         scanf("%d", &choice);
 
         switch (choice) {

@@ -17,7 +17,7 @@ void adicionar_livro(book *head){
 
     //verificação da alocação se foi bem sucedida
     if (new_book == NULL){
-        printf("FALHA: Memória insuficiente para adicionar o livro!\n");
+        printf("FALHA: Memoria insuficiente para adicionar o livro!\n");
         return;
     }
 
@@ -31,7 +31,7 @@ void adicionar_livro(book *head){
     
     // Verificar se o ID já existe (função auxiliar)
     if (livroExiste(*head, new_book->id)) {
-        printf("Erro: ID do livro já existe!\n");
+        printf("Erro: ID do livro ja existe!\n");
         free(new_book);
         return;
     }
@@ -39,37 +39,37 @@ void adicionar_livro(book *head){
     // Limpar buffer de entrada para evitar problemas com fgets
     while(getchar() != '\n');
 
-    printf("\nDigite o titulo do livro: ");
+    printf("Digite o titulo do livro: ");
     fgets(new_book->titulo, 100, stdin);
     new_book->titulo[strcspn(new_book->titulo, "\n")] = '\0';
 
     // Verificar se o título é válido
     if (strlen(new_book->titulo) == 0) {
-        printf("Erro: O título do livro não pode ser vazio!\n");
+        printf("Erro: O titulo do livro nao pode ser vazio!\n");
         free(new_book);
         return;
     }
 
-    printf("\nDigite o nome do autor do livro: ");
+    printf("Digite o nome do autor do livro: ");
     fgets(new_book->autor, 100, stdin);
     new_book->autor[strcspn(new_book->autor, "\n")] = '\0';
 
     // Verificar se o autor é válido
     if (strlen(new_book->autor) == 0) {
-        printf("Erro: O nome do autor não pode ser vazio!\n");
+        printf("Erro: O nome do autor nao pode ser vazio!\n");
         free(new_book);
         return;
     }
 
     printf("Digite o ano de publicação: ");
     if (scanf("%d", &new_book->ano_publicacao) != 1) {
-        printf("Erro: Ano de publicação inválido!\n");
+        printf("Erro: Ano de publicacao invalido!\n");
         free(new_book);
         return;
     }
     
 
-    printf("Digite a edição do livro: ");
+    printf("Digite a edicao do livro: ");
     if (scanf("%d", &new_book->edicao) != 1) {
         printf("Erro: Edição de publicação inválido!\n");
         free(new_book);
@@ -93,7 +93,7 @@ void listar_livros(book *head){
     }
 
     printf("------------ LISTA DE LIVROS ----------\n");
-    printf("  ID  |  Titulo  |  Autor  |  Ano  | Edição  \n");
+    printf("\t  ID  \t|\t   Titulo  \t|\t  Autor  \t|\t  Ano  \t|\t Edicao  \t\n");
 
     book atual = *head;
 
@@ -113,16 +113,16 @@ void procura_por_nome(book head, char *book_name) {
         if (strcmp(var_aux->titulo, book_name) == 0){
         printf("Livro encontrado:\n");
         printf("ID: %d\n", var_aux->id);
-        printf("Título: %s\n", var_aux->titulo);
+        printf("Titulo: %s\n", var_aux->titulo);
         printf("Autor: %s\n", var_aux->autor);
         printf("Ano: %d\n", var_aux->ano_publicacao);
-        printf("Edição: %d\n", var_aux->edicao);
-        printf("Disponível: %s\n", (var_aux->disponivel == 1) ? "Sim" : "Não");
+        printf("Edicao: %d\n", var_aux->edicao);
+        printf("Disponivel: %s\n", (var_aux->disponivel == 1) ? "Sim" : "Não");
         return;
         }
         var_aux = var_aux->next;
     }
-    printf("Livro não encontrado.\n");
+    printf("Livro nao encontrado.\n");
 }
 
 void procura_por_id(book head, int book_id){
@@ -131,16 +131,16 @@ void procura_por_id(book head, int book_id){
         if (var_aux->id == book_id){
             printf("Livro encontrado:\n");
             printf("ID: %d\n", var_aux->id);
-            printf("Título: %s\n", var_aux->titulo);
+            printf("Titulo: %s\n", var_aux->titulo);
             printf("Autor: %s\n", var_aux->autor);
             printf("Ano: %d\n", var_aux->ano_publicacao);
-            printf("Edição: %d\n", var_aux->edicao);
-            printf("Disponível: %s\n", (var_aux->disponivel == 1) ? "Sim" : "Não");
+            printf("Edicao: %d\n", var_aux->edicao);
+            printf("Disponivel: %s\n", (var_aux->disponivel == 1) ? "Sim" : "Não");
             return;
         }
         var_aux = var_aux->next;
     }
-    printf("Livro não encontrado.\n");
+    printf("Livro nao encontrado.\n");
 }
 
 void remover_livro(book *head, int id){
@@ -182,7 +182,7 @@ void salvar_lista_de_livro(book head){
 
     //verificação se o arquivo foi aberto corretamente
     if (file == NULL){
-        printf("EERO: arquivo não foi aberta corretamente para salvar os livro.\n");
+        printf("EERO: arquivo nao foi aberta corretamente para salvar os livro.\n");
         return;
     }
     
@@ -207,7 +207,7 @@ void salvar_lista_de_livro(book head){
 void carregar_lista_de_livros(book *head) {
     FILE *file = fopen("Biblioteca.txt", "r");
     if (file == NULL) {
-        printf("ERRO: Não foi possível abrir o arquivo!\n");
+        printf("ERRO: Nao foi possível abrir o arquivo!\n");
         return;
     }
 
@@ -224,7 +224,7 @@ void carregar_lista_de_livros(book *head) {
         book new_book = (book)malloc(sizeof(struct biblioteca));
         
         if (new_book == NULL) {
-            printf("FALHA: Memória insuficiente para carregar o livro!\n");
+            printf("FALHA: Memoria insuficiente para carregar o livro!\n");
             fclose(file);
             return;
         }
