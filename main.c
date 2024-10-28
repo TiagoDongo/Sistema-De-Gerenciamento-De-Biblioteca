@@ -14,6 +14,13 @@ int main() {
         printf("5. Listar Livros\n");
         printf("6. Salvar Lista de Livros\n");
         printf("7. Carregar Lista de Livros\n");
+        //Ainda precisam ser implementadas
+        printf("8. Registrar novo utilizador");
+        printf("10. Listar usuarios");
+        printf("9. Emprestar livro");
+        printf("11. Devolver livro");
+        printf("12. Calcular multa");
+        //-----------------------------
         printf("0. Sair\n");
         printf("---------------------------------------\n");
         printf("Escolha uma opcao: ");
