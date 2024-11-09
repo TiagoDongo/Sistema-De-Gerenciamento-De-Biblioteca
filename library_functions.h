@@ -6,6 +6,7 @@
 #include<time.h>
 #include<string.h>
 
+//estrutura de dados do tipo lista para guardar as informação sobre os livros
 typedef struct biblioteca{
     int id;
     char titulo[100];

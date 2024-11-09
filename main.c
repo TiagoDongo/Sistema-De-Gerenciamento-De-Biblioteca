@@ -1,4 +1,5 @@
 #include "library_functions.h"
+#include "user_functions.h"
 
 int main() {
     book head = NULL; // Inicializa a lista de livros
@@ -14,13 +15,11 @@ int main() {
         printf("5. Listar Livros\n");
         printf("6. Salvar Lista de Livros\n");
         printf("7. Carregar Lista de Livros\n");
-        //Ainda precisam ser implementadas
-        printf("8. Registrar novo utilizador");
-        printf("10. Listar usuarios");
-        printf("9. Emprestar livro");
-        printf("11. Devolver livro");
-        printf("12. Calcular multa");
-        //-----------------------------
+        printf("8. Registrar novo utilizador\n");
+        printf("9. Listar usuarios\n");
+        printf("10. Emprestar livro\n");
+        printf("11. Devolver livro\n");
+        printf("12. Calcular multa\n");
         printf("0. Sair\n");
         printf("---------------------------------------\n");
         printf("Escolha uma opcao: ");
@@ -57,11 +56,27 @@ int main() {
             case 7:
                 carregar_lista_de_livros(&head);
                 break;
+            case 8:
+                printf("Opcao nao esta disponivel ainda.\n");
+                break;
+            case 9:
+                printf("Opcao nao esta disponivel ainda.\n");
+                break;
+            case 10:
+                printf("Opcao nao esta disponivel ainda.\n");
+                break;
+            case 11:
+                printf("Opcao nao esta disponivel ainda.\n");
+                break;
+            case 12:
+                printf("Opcao nao esta disponivel ainda.\n");
+                break;
             case 0:
                 printf("Saindo do programa...\n");
                 break;
             default:
                 printf("Opcao invalida! Tente novamente.\n");
+                break;
         }
     } while (choice != 0);
 
