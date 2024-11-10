@@ -19,7 +19,7 @@ typedef struct usuario {
     int telefone;
     int livros_emprestados;
     int livros_devolvidos;
-    int book_id;  // ID do livro emprestado
+    book book_id;  // ID do livro emprestado
     char data_emprestimo[11];
     char data_devolucao[11];
     float multa;
