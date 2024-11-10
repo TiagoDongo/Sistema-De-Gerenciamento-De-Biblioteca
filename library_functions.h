@@ -5,8 +5,10 @@
 #include<stdlib.h>
 #include<time.h>
 #include<string.h>
+#include"Biblioteca.h"
 
 //estrutura de dados do tipo lista para guardar as informação sobre os livros
+/*
 typedef struct biblioteca{
     int id;
     char titulo[100];
@@ -16,6 +18,7 @@ typedef struct biblioteca{
     int disponivel;  //1 para disponivel e 0 para não disponivel
     struct biblioteca *next;
 } *book;
+*/
 
 //função para adicionar um livro a lista
 void adicionar_livro(book *head); //pronto

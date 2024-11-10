@@ -5,9 +5,10 @@
 #include<stdlib.h>
 #include<time.h>
 #include<string.h>
-#include"library_functions.h"
+#include"Biblioteca.h"
 
 //estrutura de dados do tipo lista para guardar as informação sobre os utilizadores da biblioteca
+/*
 typedef struct usuario{
     char nome[100];
     int telefone;
@@ -19,6 +20,7 @@ typedef struct usuario{
     float multa;
     struct usuario *next;
 } *user;
+*/
 
 //função que ira calcular a multa por cada dia de atraso depois da data de devolução do livro
 void calcular_multa(user *head, char *nome_usuario, int book_id, char *data_devolucao);
