@@ -93,7 +93,7 @@ void listar_livros(book *head){
     }
 
     printf("------------ LISTA DE LIVROS ----------\n");
-    printf("\t  ID  \t|\t   Titulo  \t|\t  Autor  \t|\t  Ano  \t|\t Edicao  \t\n");
+    printf("\t ID \t|\t Titulo \t|\t Autor \t|\t Ano \t|\t Edicao \t\n");
 
     book atual = *head;
 
@@ -193,7 +193,7 @@ void salvar_lista_de_livro(book head){
     //percorre a lista de livros para salvar as informações no arquivo
     book atual = head;
     while (atual != NULL){
-        fprintf(file, "%d\t%s\t\t%s\t\t%d\t%d\t%s\n",atual->id,atual->autor,atual->titulo,atual->ano_publicacao,atual->edicao,atual->disponivel ? "Sim" : "Não");
+        fprintf(file, "\t%d\t%s\t\t%s\t\t%d\t%d\t%s\t\n",atual->id,atual->autor,atual->titulo,atual->ano_publicacao,atual->edicao,atual->disponivel ? "Sim" : "Não");
 
         atual = atual->next;
     }
