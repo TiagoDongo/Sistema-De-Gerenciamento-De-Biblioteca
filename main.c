@@ -3,6 +3,7 @@
 
 int main() {
     book head = NULL; // Inicializa a lista de livros
+    user head_user = NULL;
     int choice, id;
     char book_name[100];
 
@@ -17,9 +18,9 @@ int main() {
         printf("7. Carregar Lista de Livros\n");
         printf("8. Registrar novo utilizador\n");
         printf("9. Listar usuarios\n");
-        printf("10. Emprestar livro\n");
-        printf("11. Devolver livro\n");
-        printf("12. Calcular multa\n");
+        printf("10. Emprestar livro\n"); //não implementado ainda
+        printf("11. Devolver livro\n");  //não implementado ainda
+        printf("12. Calcular multa\n");  //não implementado ainda
         printf("0. Sair\n");
         printf("---------------------------------------\n");
         printf("Escolha uma opcao: ");
@@ -57,19 +58,19 @@ int main() {
                 carregar_lista_de_livros(&head);
                 break;
             case 8:
-                printf("Opcao nao esta disponivel ainda.\n");
+                cadastro_usuario(&head_user);
                 break;
             case 9:
-                printf("Opcao nao esta disponivel ainda.\n");
+                listar_usuarios(&head_user);
                 break;
             case 10:
-                printf("Opcao nao esta disponivel ainda.\n");
+                printf("Opcao nao esta disponivel no momento.\n");
                 break;
             case 11:
-                printf("Opcao nao esta disponivel ainda.\n");
+                printf("Opcao nao esta disponivel no momento.\n");
                 break;
             case 12:
-                printf("Opcao nao esta disponivel ainda.\n");
+                printf("Opcao nao esta disponivel no momento.\n");
                 break;
             case 0:
                 printf("Saindo do programa...\n");
@@ -85,6 +86,12 @@ int main() {
     while (atual != NULL) {
         book temp = atual;
         atual = atual->next;
+        free(temp);
+    }
+    user atual_user = head_user;
+    while (atual_user != NULL) {
+        user temp = atual_user;
+        atual_user = atual_user->next;
         free(temp);
     }
 
