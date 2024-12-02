@@ -20,27 +20,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Etapa 2: Instalar dependências necessárias
-      - name: Install dependencies
+      # Etapa 2: Instalar dependências no Linux
+      - name: Install dependencies (Linux)
+        if: runner.os == 'Linux'
         run: |
-          if [ ${{ runner.os }} == 'Linux' ]; then
-            sudo apt-get update
-            sudo apt-get install -y build-essential
-          fi
-          if [ ${{ runner.os }} == 'Windows' ]; then
-            choco install mingw --no-progress --ignore-unfound
-          fi
+          sudo apt-get update
+          sudo apt-get install -y build-essential
 
-      # Etapa 3: Compilar o projeto usando o Makefile
+      # Etapa 3: Instalar dependências no Windows
+      - name: Install dependencies (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          choco install mingw --no-progress --ignore-unfound
+
+      # Etapa 4: Compilar o projeto
       - name: Build project
         run: |
           if [ ${{ runner.os }} == 'Linux' ]; then
-            make  # Usa o comando make no Linux
-          fi
-          if [ ${{ runner.os }} == 'Windows' ]; then
-            if command -v make > /dev/null 2>&1; then
-              make  # Usa 'make' se renomeado localmente
-            else
-              mingw32-make  # Usa 'mingw32-make' padrão
-            fi
+            make
+          elif [ ${{ runner.os }} == 'Windows' ]; then
+            mingw32-make
           fi
