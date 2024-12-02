@@ -1,0 +1,46 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - main  # Executa a ação em push para o branch 'main'
+  pull_request:
+    branches:
+      - main  # Executa a ação em pull request para o branch 'main'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}  # Define os sistemas operacionais a serem usados
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]  # Linux e Windows como ambientes
+
+    steps:
+      # Etapa 1: Fazer checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Etapa 2: Instalar dependências necessárias
+      - name: Install dependencies
+        run: |
+          if [ ${{ runner.os }} == 'Linux' ]; then
+            sudo apt-get update
+            sudo apt-get install -y build-essential
+          fi
+          if [ ${{ runner.os }} == 'Windows' ]; then
+            choco install mingw --no-progress --ignore-unfound
+          fi
+
+      # Etapa 3: Compilar o projeto usando o Makefile
+      - name: Build project
+        run: |
+          if [ ${{ runner.os }} == 'Linux' ]; then
+            make  # Usa o comando make no Linux
+          fi
+          if [ ${{ runner.os }} == 'Windows' ]; then
+            if command -v make > /dev/null 2>&1; then
+              make  # Usa 'make' se renomeado localmente
+            else
+              mingw32-make  # Usa 'mingw32-make' padrão
+            fi
+          fi
