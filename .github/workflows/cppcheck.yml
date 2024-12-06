@@ -10,6 +10,9 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v2
 
+            - name: Install cppcheck
+              run: sudo apt-get update && sudo apt-get install -y cppcheck
+
             - name: Run cppcheck
               uses: deep5050/cppcheck-action@v3.0
               with:
@@ -17,7 +20,7 @@ jobs:
                 enable: all
                 inconclusive: "true"
                 force: "true"
-                platform: "unix"
+                platform: "native"
                 std: "c11"
                 output_file: "cppcheck-report.txt"
 
