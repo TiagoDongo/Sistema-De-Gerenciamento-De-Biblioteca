@@ -1,0 +1,28 @@
+name: cppcheck-action
+on: [push]
+
+jobs:
+    build:
+        name: cppcheck
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Run cppcheck
+              uses: deep5050/cppcheck-action@v3.0
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN}}
+                enable: all
+                inconclusive: "true"
+                force: "true"
+                platform: "unix"
+                std: "c11"
+                output_file: "cppcheck-report.txt"
+
+            - name: Upload cppcheck report    
+              uses: actions/upload-artifact@v3
+              with:
+                name: cppcheck-report
+                path: cppcheck-report.txt
