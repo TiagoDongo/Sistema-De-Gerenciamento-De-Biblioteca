@@ -4,7 +4,7 @@ on: [push]
 jobs:
     build:
         name: cppcheck
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-22.04
 
         steps:
             - name: Checkout code
@@ -25,7 +25,7 @@ jobs:
                 output_file: "cppcheck-report.txt"
 
             - name: Upload cppcheck report    
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                 name: cppcheck-report
                 path: cppcheck-report.txt
