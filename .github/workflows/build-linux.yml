@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Ambiente Linux
+    runs-on: ubuntu-24.04  # Ambiente Linux
 
     steps:
       - name: Checkout code
