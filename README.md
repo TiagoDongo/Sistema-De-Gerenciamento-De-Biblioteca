@@ -1,87 +1,75 @@
 # Sistema De Gerenciamento De Biblioteca
- 
-Este é um projeto em **C** que implementa um sistema de gerenciamento de biblioteca com funcionalidades como cadastro de usuários, empréstimos, devoluções e gerenciamento de livros utilizando listas encadeadas. O projeto foi desenvolvido utilizando o **Visual Studio Code** no **Windows**, com o **MinGW** como ferramenta de compilação.
 
----
+![Github License](https://img.shields.io/github/license/TiagoDongo/Sistema-De-Gerenciamento-De-Biblioteca?style=for-the-badge&logo=githublicense)
+![github actions](https://img.shields.io/badge/Github_Actions-%232088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![GitHub language count](https://img.shields.io/github/languages/count/TiagoDongo/Sistema-De-Gerenciamento-De-Biblioteca?style=for-the-badge)
+![ issues](https://img.shields.io/github/issues/TiagoDongo/Sistema-De-Gerenciamento-De-Biblioteca?style=for-the-badge)
+![build linux](https://img.shields.io/github/actions/workflow/status/TiagoDongo/Sistema-De-Gerenciamento-De-Biblioteca/build-linux.yml?style=for-the-badge&logo=linux&logoColor=black&label=Build%20Linux&labelColor=%23FCC624)
+![build windows](https://img.shields.io/github/actions/workflow/status/TiagoDongo/Sistema-De-Gerenciamento-De-Biblioteca/build-windows.yml?style=for-the-badge&logo=windows&logoColor=white&label=Build%20Windows&labelColor=blue)
 
-## Funcionalidades
+Projeto simples para gerenciar informações de uma biblioteca, incluindo cadastro de livros, leitores e controle de empréstimos
 
-- **Usuários**
-  - Cadastro de usuários.
-  - Listagem de usuários.
-  - Registro de empréstimos e devoluções.
+> [!IMPORTANT]
+> Este projeto foi testado e executado no Windows e no Linux Ubuntu
 
-- **Livros**
-  - Adição de novos livros.
-  - Busca de livros por título ou ID.
-  - Remoção de livros.
-  - Listagem de todos os livros.
 
-- **Persistência**
-  - Salvamento e carregamento de dados em arquivos de texto.
+### Tarefas Pendentes
+O projeto ainda está em desenvolvimento, esta faltando:
 
----
+- [ ] Implementar emprestimo de livros
+- [ ] Implementar devolução de livros
+- [ ] Escrever testes unitários
 
-## Pré-Requisitos
+## 💻 Pré-requisitos
 
-1. **Windows com MinGW instalado**:
-   - Certifique-se de ter o compilador MinGW e o `mingw32-make.exe`.
-2. **Visual Studio Code**:
-   - Recomenda-se usar o VS Code com extensões para C e Makefile.
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
----
+- Instalar as extenções de ```C``` e ```Makefile```
+- Projeto pode ser executado tanto no **Windows** quanto no **Linux**
+- Instalar um compilador de linguagem C na sua maquina:
+    - Para Windows: ```MinGW``` 
+    - Para Linux: ```gcc```
+      
+        ```
+        sudo apt update
+        sudo apt install build-essential
+        ```
 
-## Compilação e Execução
+## 🚀 Instalação do projeto
 
-1. **Clone o repositório**:
-    ```bash
+Para instalar o ```Sistema de Gerenciamento de Biblioteca```, siga estas etapas:
+
+#### Linux e Windows:
+1. Clone o repositório para sua máquina local:
+    ```
     git clone https://github.com/TiagoDongo/Sistema-De-Gerenciamento-De-Biblioteca.git
-    cd seu-repositorio
+    ```
 
-2. **Compile o projeto**:
-    -Utilize o comando **mingw32-make** (ou equivalente) para compilar:
-    ````bash
-    mingw32-make
-    ````
-    -O executável gerado será main.
+2. Navegue até a pasta do projeto:
+    ```
+    cd Sistema-De-Gerenciamento-De-Biblioteca
+    ```
 
-3. **Execute o programa**:
-    -Após compilar, execute o programa:
-    ````bash
-    ./main 
-    ````
+3. Compile o projeto usando:
+    - **Linux:**
+        ```
+        make
+    - **Windows:**
+        ```
+        mingw32-make
+4. Execute o projeto:
+    ```
+    ./main
+    ```
 
-4: **Limpar os arquivos compilados**:
-Para limpar os arquivos objeto e o executável, use:
-````bash
-    mingw32-make clean
-````
+## 📫 Contribuindo para o projeto
 
-## Estrutura do Projeto
-* main.c: Arquivo principal do programa.
-* user_functions.c / .h: Funções relacionadas aos usuários.
-* library_functions.c / .h: Funções relacionadas aos livros.
-* Biblioteca.h: Estruturas de dados do projeto.
-* Makefile: Arquivo para gerenciar a compilação.
+Para contribuir com o projeto, siga estas etapas:
 
-## Contribuição
-Se você deseja contribuir para o projeto, siga estas etapas:
+1. Bifurque este repositório.
+2. Crie um branch: `git checkout -b <nome_branch>`.
+3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
+4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
+5. Crie a solicitação de pull.
 
-1. Faça um fork do repositório.
-2. Crie um branch para sua feature ou correção de bug:
-````bash
-    git checkout -b minha-feature
-````
-3. Faça commit das suas alterações:
-````bash
-    git commit -m "Adiciona minha feature"
-````
-4. Envie para o seu repositório fork:
-````bash
-    git push origin minha-feature
-````
-5. Abra um Pull Request descrevendo suas alterações.
-
-## Observação
-* Este projeto foi testado no Windows com MinGW e no Linux com make. Certifique-se de usar o comando correto de acordo com seu sistema.
-* Se encontrar problemas, por favor, abra uma Issue no GitHub.
+Como alternativa, consulte a documentação do GitHub em [```como criar uma solicitação pull```](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
